@@ -9,7 +9,7 @@ Juniper is a JavaFX-based Plotting Framework for Effective Multi-Dimensional 3D 
 
 1. Clone this repository with git:
 	```
-	$ git clone https://philippos.info/repo/philippos/juniper
+	$ git clone https://github.com/pphilippos/juniper
 	```
 
 1. Install Oracle [JDK](https://www.oracle.com/java/technologies/downloads/) and Apache [Maven](https://maven.apache.org/install.html). These are also usually available in common software repositories.
