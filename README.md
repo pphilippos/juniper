@@ -9,10 +9,10 @@ Juniper is a JavaFX-based Plotting Framework for Effective Multi-Dimensional 3D 
 
 1. Clone this repository with git:
 	```
-	$ git clone https://github.com/pphilippos/juniper
+	$ git clone https://philippos.info/repo/philippos/juniper
 	```
 
-1. Install Oracle [JDK](https://www.oracle.com/java/technologies/downloads/) and Apache [Maven](https://maven.apache.org/install.html). These are also usually available in common software repositories.
+1. Install Oracle [JDK](https://www.oracle.com/java/technologies/downloads/) or [OpenJDK](https://openjdk.org/) and Apache [Maven](https://maven.apache.org/install.html). These are also usually available in common software repositories.
 
 1. Run the following in a Linux, Windows or Mac terminal within the juniper directory:
 
@@ -20,16 +20,26 @@ Juniper is a JavaFX-based Plotting Framework for Effective Multi-Dimensional 3D 
 	$ mvn javafx:run
 	```
 	
-	If there is an environment issue relating to the platform, it needs to be specified accordingly (win, mac, or linux), e.g.:
-
-	```
-	$ mvn javafx:run -Djavafx.platform=linux
-	```
-	
 1. Use the GUI to generate plots. A sample dataset is provided and can be loaded directly ("TOP500_202406_co.csv" from top500.org, explained in the paper).
 
 See the [``MANUAL.md``](MANUAL.md) for more details on its functionality.
 
+
+### Troubleshooting
+
+Use the following workarounds for common issues:
+
+- If there is an environment issue relating to the platform, it needs to be specified accordingly (win, mac, or linux), e.g. run with:
+
+	```
+	$ mvn javafx:run -Djavafx.platform=linux
+	```
+
+- If Maven complains that "release version 21 is not supported", then this is an indication that you have installed the Java runtime environment (JRK), instead of the Java Development Kit (JDK). For example, in a fresh Ubuntu release (tested with 24.04 LTS, 25.04) machine, only the following is required to be able to run all aforementioned commands:
+
+	```
+	$ sudo apt install git openjdk-21-jdk maven
+	```
 
 ## Development
 
@@ -44,7 +54,7 @@ The generated API documentation (Javadocs) can be opened with ``target/reports/a
 
 ## Citing
 
-For the moment, you can cite the [Arxiv pre-print](https://arxiv.org/abs/2406.06146) from Trinity College Dublin, and/or this repository directly. Note that the plan is to split this into two separate papers, one for this framework, and another one for the empirical study.
+For the moment, you can cite this repository directly or an [Arxiv pre-print](https://arxiv.org/abs/2406.06146v2). Note that the plan is to split the latter into two separate papers, one for this framework, and another one for the empirical study from Trinity College Dublin.
 
 
 ## License

@@ -1904,7 +1904,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
-                <Property name="text" type="java.lang.String" value="&lt;html&gt;Author: Philippos Papaphilippou&lt;br&gt;Website: www.philippos.info&lt;br&gt;Copyright: 2024"/>
+                <Property name="text" type="java.lang.String" value="&lt;html&gt;Author: Philippos Papaphilippou&lt;br&gt;Website: www.philippos.info&lt;br&gt;Copyright: 2025"/>
                 <Property name="opaque" type="boolean" value="true"/>
               </Properties>
             </Component>
@@ -1918,7 +1918,7 @@
                     <Property name="columns" type="int" value="20"/>
                     <Property name="lineWrap" type="boolean" value="true"/>
                     <Property name="rows" type="int" value="5"/>
-                    <Property name="text" type="java.lang.String" value="Juniper&#xa;&#xa;     Copyright (C) 2024  Philippos Papaphilippou&#xa;&#xa;     This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.&#xa;&#xa;     This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public License for more details.&#xa;&#xa;     You should have received a copy of the GNU Affero General Public License along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.&#xa;"/>
+                    <Property name="text" type="java.lang.String" value="Juniper&#xa;&#xa;     Copyright (C) 2025  Philippos Papaphilippou&#xa;&#xa;     This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.&#xa;&#xa;     This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public License for more details.&#xa;&#xa;     You should have received a copy of the GNU Affero General Public License along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.&#xa;"/>
                     <Property name="wrapStyleWord" type="boolean" value="true"/>
                   </Properties>
                 </Component>

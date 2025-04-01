@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024  Philippos Papaphilippou
+ * Copyright (C) 2025  Philippos Papaphilippou
  * 
  * This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  * 
@@ -1599,14 +1599,14 @@ public class Controls extends javax.swing.JFrame {
 
         aboutLabel.setBackground(new java.awt.Color(255, 255, 255));
         aboutLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        aboutLabel.setText("<html>Author: Philippos Papaphilippou<br>Website: www.philippos.info<br>Copyright: 2024");
+        aboutLabel.setText("<html>Author: Philippos Papaphilippou<br>Website: www.philippos.info<br>Copyright: 2025");
         aboutLabel.setOpaque(true);
 
         licenseTextArea.setEditable(false);
         licenseTextArea.setColumns(20);
         licenseTextArea.setLineWrap(true);
         licenseTextArea.setRows(5);
-        licenseTextArea.setText("Juniper\n\n     Copyright (C) 2024  Philippos Papaphilippou\n\n     This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.\n\n     This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public License for more details.\n\n     You should have received a copy of the GNU Affero General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.\n");
+        licenseTextArea.setText("Juniper\n\n     Copyright (C) 2025  Philippos Papaphilippou\n\n     This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.\n\n     This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public License for more details.\n\n     You should have received a copy of the GNU Affero General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.\n");
         licenseTextArea.setWrapStyleWord(true);
         licenseScrollPane.setViewportView(licenseTextArea);
 
@@ -3132,7 +3132,7 @@ public class Controls extends javax.swing.JFrame {
                     double ddis = 0;
                     // Apply the change to the corresponding tick Group.
                     switch(ax){
-                        case 0: ddis = parent.AXIS_LENGTH*parent.xtic_dis;
+                        case 0: ddis =-parent.AXIS_LENGTH*parent.xtic_dis;
                             parent.ticsGroups[ax].setTranslateY(ddis);                            
                             if (parent.ticsGroups[ax].getTranslateZ()<parent.AXIS_LENGTH)
                                 parent.ticsGroups[ax].setTranslateZ(ddis);  
