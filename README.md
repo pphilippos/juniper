@@ -9,10 +9,10 @@ Juniper is a JavaFX-based Plotting Framework for Effective Multi-Dimensional 3D 
 
 1. Clone this repository with git:
 	```
-	$ git clone https://philippos.info/repo/philippos/juniper
+	$ git clone https://github.com/pphilippos/juniper
 	```
 
-1. Install Oracle [JDK](https://www.oracle.com/java/technologies/downloads/) or [OpenJDK](https://openjdk.org/) and Apache [Maven](https://maven.apache.org/install.html). These are also usually available in common software repositories.
+1. Install Oracle [JDK](https://www.oracle.com/java/technologies/downloads/) or [OpenJDK](https://openjdk.org/), and Apache [Maven](https://maven.apache.org/install.html). These are also usually available in common software repositories.
 
 1. Run the following in a Linux, Windows or Mac terminal within the juniper directory:
 
@@ -29,17 +29,12 @@ See the [``MANUAL.md``](MANUAL.md) for more details on its functionality.
 
 Use the following workarounds for common issues:
 
-- If there is an environment issue relating to the platform, it needs to be specified accordingly (win, mac, or linux), e.g. run with:
+- If there is an environment issue relating to the platform, it needs to be specified accordingly (win, mac, or linux), e.g. run with: ``$ mvn javafx:run -Djavafx.platform=linux``.
 
-	```
-	$ mvn javafx:run -Djavafx.platform=linux
-	```
+- If Maven complains that "release version 21 is not supported", then this is an indication that you have installed the Java Runtime Environment (JRK), instead of the JDK. For example, in a fresh Ubuntu release (tested with 24.04 LTS, 25.04) machine, only the following is required to be able to run all aforementioned commands: ``$ sudo apt install git openjdk-21-jdk maven``.
 
-- If Maven complains that "release version 21 is not supported", then this is an indication that you have installed the Java runtime environment (JRK), instead of the Java Development Kit (JDK). For example, in a fresh Ubuntu release (tested with 24.04 LTS, 25.04) machine, only the following is required to be able to run all aforementioned commands:
+- Similar messages such as "Unsupported class file major version 65" may indicate that you have an older version of JDK set as default. For example, on Arch/Manjaro Linux use ``$ archlinux-java status`` to see the installed Java versions, and select an appropriate one (version >= 21), e.g. with ``$ sudo archlinux-java set java-23-openjdk``.	
 
-	```
-	$ sudo apt install git openjdk-21-jdk maven
-	```
 
 ## Development
 

@@ -279,14 +279,14 @@ public class Controls extends javax.swing.JFrame {
 
         fileSelectLabel.setText("File selection");
 
-        loadButton.setText("Load");
+        loadButton.setText("Open");
         loadButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loadButtonActionPerformed(evt);
             }
         });
 
-        fileSepLabel.setText("File Separator");
+        fileSepLabel.setText("Separator (delimiter)");
 
         fsepComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         fsepComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -305,7 +305,7 @@ public class Controls extends javax.swing.JFrame {
             }
         });
 
-        pasteButton.setText("Paste");
+        pasteButton.setText("Paste contents");
         pasteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pasteButtonActionPerformed(evt);
@@ -355,6 +355,8 @@ public class Controls extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        fileSepLabel.getAccessibleContext().setAccessibleName("");
+
         jTabbedPane.addTab("Dataset", dataPanel);
 
         dimPanel.setToolTipText("");
@@ -401,6 +403,7 @@ public class Controls extends javax.swing.JFrame {
 
         plotButton.setText("Plot");
         plotButton.setActionCommand("");
+        plotButton.setEnabled(false);
         plotButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 plotButtonActionPerformed(evt);
@@ -514,7 +517,7 @@ public class Controls extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        plotButton.getAccessibleContext().setAccessibleName("jButton1");
+        plotButton.getAccessibleContext().setAccessibleName("");
 
         jTabbedPane.addTab("Dimensions", dimPanel);
 
@@ -531,6 +534,7 @@ public class Controls extends javax.swing.JFrame {
         pSizeSlider.setPaintLabels(true);
         pSizeSlider.setPaintTicks(true);
         pSizeSlider.setValue(5);
+        pSizeSlider.setEnabled(false);
         pSizeSlider.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 pSizeSliderStateChanged(evt);
@@ -542,6 +546,7 @@ public class Controls extends javax.swing.JFrame {
         pTypeLabel.setText("Point Type:");
 
         pTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        pTypeComboBox.setEnabled(false);
         pTypeComboBox.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 pTypeComboBoxItemStateChanged(evt);
@@ -579,6 +584,7 @@ public class Controls extends javax.swing.JFrame {
         });
 
         depthcolors.setText("Depth-Map Point Colors");
+        depthcolors.setEnabled(false);
         depthcolors.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 depthcolorsActionPerformed(evt);
@@ -1335,6 +1341,7 @@ public class Controls extends javax.swing.JFrame {
         viewerOptPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         dataViewerLoadButton.setText("Load");
+        dataViewerLoadButton.setEnabled(false);
         dataViewerLoadButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dataViewerLoadButtonActionPerformed(evt);
@@ -1860,8 +1867,11 @@ public class Controls extends javax.swing.JFrame {
         // Invoke Java file chooser
         final JFileChooser fc = new JFileChooser();
         fc.setCurrentDirectory(new File(System.getProperty("user.dir")));
-        int returnVal = fc.showOpenDialog(this);
         
+        int returnVal = fc.showOpenDialog(this);
+        if(returnVal == JFileChooser.CANCEL_OPTION)
+            return;
+                
         String separator = "";
         switch (fsepComboBox.getSelectedIndex()){
             case 4:
@@ -1943,6 +1953,8 @@ public class Controls extends javax.swing.JFrame {
                 }
                 counter++;
             }
+            plotButton.setEnabled(true); pSizeSlider.setEnabled(true); pTypeComboBox.setEnabled(true); 
+            depthcolors.setEnabled(true); dataViewerLoadButton.setEnabled(true);
         } catch (IOException ex) {
             Logger.getLogger(Controls.class.getName()).log(Level.SEVERE, null, ex);
             // TODO: display parsing error messages in the GUI
@@ -2175,6 +2187,8 @@ public class Controls extends javax.swing.JFrame {
                     }
                     counter++;
                 }
+                plotButton.setEnabled(true); pSizeSlider.setEnabled(true); pTypeComboBox.setEnabled(true); 
+                depthcolors.setEnabled(true); dataViewerLoadButton.setEnabled(true);
             } catch (IOException ex) {
                 Logger.getLogger(Controls.class.getName()).log(Level.SEVERE, null, ex);
             }

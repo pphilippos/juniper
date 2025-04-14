@@ -62,8 +62,11 @@
                 <version>0.0.4</version>
                 <configuration>
                     <!--<mainClass>info.philippos.smanager.Starter</mainClass><project>-->
-                        <mainClass>org.fxyz3d.Starter</mainClass>
-                </configuration>
+                    <mainClass>org.fxyz3d.Starter</mainClass>
+                    <jvmArgs>
+                        <jvmArg>-Xmx4000m</jvmArg>
+                    </jvmArgs>
+                </configuration>                
                 <executions>
                     <execution>
                         <!-- Default configuration for running -->

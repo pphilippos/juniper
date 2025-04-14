@@ -123,16 +123,22 @@ public class Juniper extends Application {
     private Controls child;
     Text text;
     
-    double last_time = 0;
+    double last_time = 0, last_time2 = 0;
+
     double rot;
     
     // https://stackoverflow.com/questions/58388279/sorting-a-pairstring-integer-in-java
     Comparator<Pair<Double, Integer>> pairComparator = Comparator.<Pair<Double, Integer>, Double>comparing(Pair::getKey).thenComparingInt(Pair::getValue);
     
+    public static final boolean fps_print = false;
+    int fps_frames = 0;
+    double fps_time = 0;
+    
     @Override
     public void start(Stage primaryStage) {     
         System.out.println("Starting");
-
+        //System.setProperty("prism.forceGPU","true");
+        //System.setProperty("prism.order", "opengl");
         buildCamera();
         buildAxes();   
         
@@ -261,18 +267,31 @@ public class Juniper extends Application {
         new AnimationTimer() {
             @Override
             public void handle(long now) {
-                
+                // Print FPS in standard output on every 1000 frames
+                if (fps_print){
+                fps_frames +=1;
+                    if (fps_frames==1000){                    
+                        double time = System.currentTimeMillis();
+                        System.out.println("FPS: " + 1000/(time-fps_time)*1000);
+                        fps_frames=0;
+                        fps_time = time;
+                    }
+                }
+                    
                 if (rotation_remainder!=0){
                     double time = System.currentTimeMillis();
-                    double step = (time-last_time)/16;
-                    cameraXform.ry.setAngle(cameraXform.ry.getAngle()-rotation_remainder*step);  
-                    if (deceleration!=1)
-                        rotation_remainder = rotation_remainder*Math.pow(deceleration, step/2);
-                    if (Math.abs(rotation_remainder)<0.01)
-                        rotation_remainder=0;
-                   
-                    seeLabels();                     
-                    last_time = time;
+                    //if (1/((time-last_time2)/1000)<=120) // vsync equivalent?
+                    {
+                        double step = (time-last_time)/16;
+                        cameraXform.ry.setAngle(cameraXform.ry.getAngle()-rotation_remainder*step);  
+                        if (deceleration!=1)
+                            rotation_remainder = rotation_remainder*Math.pow(deceleration, step/2);
+                        if (Math.abs(rotation_remainder)<0.01)
+                            rotation_remainder=0;
+                        seeLabels();   
+                        last_time2 = time; 
+                    }
+                    last_time = time;                    
                 }
                 if (screenshot){
                     WritableImage imageS = new WritableImage(Integer.parseInt(child.picXdimSpinner.getValue().toString()),Integer.parseInt(child.picYdimSpinner.getValue().toString()));
@@ -721,7 +740,7 @@ public class Juniper extends Application {
                 ticsGroups[ax].getChildren().add(tgr);
             }
             
-            // Group transformations to follow view preferences,  such as the distance of the labels from the axes
+            // Group transformations to follow view preferences, such as the distance of the labels from the axes
             double ddis = 0;
             switch(ax){
                 case 0: ddis =-AXIS_LENGTH*xtic_dis; break;

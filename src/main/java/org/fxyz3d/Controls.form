@@ -127,7 +127,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="loadButton">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Load"/>
+                <Property name="text" type="java.lang.String" value="Open"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loadButtonActionPerformed"/>
@@ -135,8 +135,11 @@
             </Component>
             <Component class="javax.swing.JLabel" name="fileSepLabel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="File Separator"/>
+                <Property name="text" type="java.lang.String" value="Separator (delimiter)"/>
               </Properties>
+              <AccessibilityProperties>
+                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
+              </AccessibilityProperties>
             </Component>
             <Component class="javax.swing.JComboBox" name="fsepComboBox">
               <Properties>
@@ -172,7 +175,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="pasteButton">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Paste"/>
+                <Property name="text" type="java.lang.String" value="Paste contents"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pasteButtonActionPerformed"/>
@@ -309,9 +312,10 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Plot"/>
                 <Property name="actionCommand" type="java.lang.String" value=""/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <AccessibilityProperties>
-                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="jButton1"/>
+                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
               </AccessibilityProperties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="plotButtonActionPerformed"/>
@@ -589,6 +593,7 @@
                 <Property name="paintLabels" type="boolean" value="true"/>
                 <Property name="paintTicks" type="boolean" value="true"/>
                 <Property name="value" type="int" value="5"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="pSizeSliderStateChanged"/>
@@ -614,6 +619,7 @@
                     <StringItem index="3" value="Item 4"/>
                   </StringArray>
                 </Property>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="pTypeComboBoxItemStateChanged"/>
@@ -757,6 +763,7 @@
                 <Component class="javax.swing.JCheckBox" name="depthcolors">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Depth-Map Point Colors"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="depthcolorsActionPerformed"/>
@@ -1549,6 +1556,7 @@
                 <Component class="javax.swing.JButton" name="dataViewerLoadButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Load"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dataViewerLoadButtonActionPerformed"/>
