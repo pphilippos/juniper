@@ -49,7 +49,7 @@ The generated API documentation (Javadocs) can be opened with ``target/reports/a
 
 ## Citing
 
-For the moment, you can cite this repository directly or an [Arxiv pre-print](https://arxiv.org/abs/2406.06146v2). Note that the plan is to split the latter into two separate papers, one for this framework, and another one for the empirical study from Trinity College Dublin.
+This software is introduced by the publication "Juniper: a 3D plotting framework for effective multi-dimensional scatterplots", Philippos Papaphilippou. It has been accepted at SoftwareX by Elsevier in May 2025. 
 
 
 ## License
